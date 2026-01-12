@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap");
+
+:root {
+  --bg-color: #050607;
+  --primary-teal: #00f2ea;
+  --secondary-blue: #0070f3;
+  --silver-metallic: #e0e0e0;
+  --card-bg: #111418;
+  --text-white: #ffffff;
+  --text-muted: #9ca3af;
+  
+  --glow-teal: 0 0 20px rgba(0, 242, 234, 0.5);
+  --glow-blue: 0 0 20px rgba(0, 112, 243, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.heading {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-teal);
+  color: var(--bg-color);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background-color: #17a39f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(26, 182, 178, 0.3);
+}
+
+.btn-outline {
+  border: 1px solid var(--primary-teal);
+  color: var(--primary-teal);
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+}
+
+.btn-outline:hover {
+  background: var(--primary-teal);
+  color: var(--bg-color);
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.text-neon {
+  text-shadow: var(--glow-teal);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--secondary-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
