@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
   const { t } = useTranslation();
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current && videoRef.current.readyState >= 3) {
+      setIsVideoLoaded(true);
+    }
+  }, []);
 
   return (
     <section className="hero">
       <div className="hero-video-wrapper">
+        <img 
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070" 
+          alt="Hero Background"
+          className="hero-poster"
+        />
         <video 
+          ref={videoRef}
           autoPlay 
           loop 
           muted 
           playsInline 
-          className="hero-video"
-          poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070"
+          preload="auto"
+          className={`hero-video ${isVideoLoaded ? 'video-loaded' : ''}`}
+          onLoadedData={() => setIsVideoLoaded(true)}
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
@@ -62,12 +77,33 @@ const Hero = () => {
           left: 0;
           width: 100%;
           height: 100%;
+          background-color: #000; /* Fallback color */
         }
 
-        .hero-video {
+        .hero-poster {
+          position: absolute;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
           object-fit: cover;
+          z-index: 0;
+        }
+
+        .hero-video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 1;
+          opacity: 0;
+          transition: opacity 1.2s ease-out;
+        }
+
+        .hero-video.video-loaded {
+          opacity: 1;
         }
 
         .hero-overlay {
@@ -77,7 +113,7 @@ const Hero = () => {
           width: 100%;
           height: 100%;
           background: linear-gradient(180deg, rgba(5,6,7,0.3) 0%, rgba(5,6,7,0.8) 100%);
-          z-index: 1;
+          z-index: 2;
         }
 
         .hero-content {
