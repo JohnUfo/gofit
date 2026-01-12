@@ -1,16 +1,58 @@
-# React + Vite
+# GOFIT - Premium Training Territory 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GOFIT is a modern, high-performance landing page for a premium fitness club, built for maximum visual impact and speed.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **High-Performance Hero Video**: Optimized with:
+  - Background "Fast Start" preloading.
+  - Poster-to-video smooth fade-in transitions.
+  - Aggressive browser caching.
+  - Compression for instant playback.
+- **Multilingual Support**: Multi-component internationalization.
+- **Modern UI/UX**:
+  - Glassmorphic design elements.
+  - Framer Motion animations.
+  - Mobile-responsive layouts.
+- **Premium Aesthetics**: Dark mode default with neon accents.
 
-## React Compiler
+## 🛠️ Built With
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** + **Vite**
+- **Framer Motion** (Animations)
+- **i18next** (Translations)
+- **Vanilla CSS** (Custom Styling)
+- **Firebase Hosting** (Production Deployment)
 
-## Expanding the ESLint configuration
+## 🚀 Deployment
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The site is hosted on Firebase:
+[https://gofit-2cec8.web.app](https://gofit-2cec8.web.app)
+
+Custom Domain:
+[https://gofit.n8ify.shop](https://gofit.n8ify.shop) (DNS Propagation in progress)
+
+## 📦 Getting Started
+
+1. **Clone the repo:**
+
+   ```bash
+   git clone https://github.com/JohnUfo/gofit.git
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run local dev server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
